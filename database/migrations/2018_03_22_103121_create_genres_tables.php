@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlbumsTable extends Migration
+class CreateGenresTables extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateAlbumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('albums', function (Blueprint $table) {
+        Schema::create('genres', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('date');
-            $table->text('artist');
             $table->text('name');
-            $table->integer('stock');
             $table->timestamps();
         });
     }
@@ -30,6 +27,16 @@ class CreateAlbumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('albums');
+        Schema::dropIfExists('genres');
+    }
+
+    public function albums()
+    {
+        return $this->belongsToMany('App\Album')->withTimestamps();
+    }
+
+    public function genres()
+    {
+        return $this->belongsToMany('App\Genre')->withTimestamps();
     }
 }

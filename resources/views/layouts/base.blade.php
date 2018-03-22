@@ -13,6 +13,7 @@
             <li><a href="/"></a>Accueil</li>
             <li><a href="/read">Voir le stock</a></li>
             <li><a href="/create">Ajouter un Album</a></li>
+            <li><a href="/createGenre">Ajouter un Genre</a></li>
         </ul>
     </div>
     @yield('content')

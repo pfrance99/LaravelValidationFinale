@@ -18,10 +18,10 @@
         <td>{{ $album->artist }}</td>
         <td>{{ $album->name }}</td>
         <td>{{ $album->date }}</td>
-        <td>{!! App\Album::find($album->id)->genres->each(function($genres)
-            {
-                 echo($genres->name);
-            }) !!}</td>
+        <td>@foreach($album->genres as $product)
+                    {{ $product->name }}
+            @endforeach
+            </td>
         <td>{{ $album->stock }}</td>
         <td> {!! Form::open(['url' => '/deleted', 'method' => 'post']) !!}
                 {!! Form::hidden('id', $album->id) !!}

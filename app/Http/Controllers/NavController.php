@@ -11,7 +11,8 @@ class NavController extends Controller
     public function read()
     {
         $albums = Album::all();
-        return view('read', ['albums' => $albums]);
+        $genres = Genre::all();
+        return view('read', ['albums' => $albums, 'genres' => $genres]);
     }
 
     public function create()

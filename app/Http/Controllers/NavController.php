@@ -29,11 +29,17 @@ class NavController extends Controller
     public function update(Request $request)
     {
         $album = Album::find($request->id);
-        return view('update', ['album' => $album]);
+        $genres = Genre::all();
+        $arrayGenres = [];
+        foreach($genres as $genre)
+        {
+            $arrayGenres[$genre->id] = $genre->name ;
+        }
+        return view('update', ['album' => $album, 'genres' => $arrayGenres]);
     }
 
     public function createGenre()
     {
-        return view('updateGenre');
+        return view('createGenre');
     }
 }

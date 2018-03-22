@@ -13,6 +13,10 @@
         {!! Form::number('date', $album->date) !!}
         {!! Form::label('Nombre en stock') !!}
         {!! Form::number('stock', $album->stock) !!}
+        @foreach($genres as $key => $genre)
+            {!! Form::label($genre) !!}
+            {!! Form::checkbox("genre_id[]", $key) !!}
+        @endforeach()
         {!! Form::submit('Valider') !!}
     {!! Form::close() !!}
 @stop

@@ -38,9 +38,10 @@ class StockController extends Controller
 
     public function UpdateOne(Request $request)
     {
-        $albumModify = Album::find($request->id);
-        $albumModify->genres()->detach();
         $newAlbum = Album::find($request->id);
+        
+        $newAlbum->genres()->detach();
+        
         $newAlbum->artist = $request->artist;
         $newAlbum->name = $request->name;
         $newAlbum->date = $request->date;

@@ -16,7 +16,13 @@ class NavController extends Controller
 
     public function create()
     {
-        return view('create');
+        $genres = Genre::all();
+        $arrayGenres = [];
+        foreach($genres as $genre)
+        {
+            $arrayGenres[$genre->id] = $genre->name ;
+        }
+        return view('create', ['genres' => $arrayGenres ]);
     }
 
     public function update(Request $request)

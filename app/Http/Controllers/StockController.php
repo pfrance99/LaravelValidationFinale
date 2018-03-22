@@ -16,6 +16,12 @@ class StockController extends Controller
         $newAlbum->date = $request->date;
         $newAlbum->stock = $request->stock;
         $newAlbum->save();
+        $allAlbums = Album::all();
+        $LastAlbum = $allAlbums->where('artist', '=', $request->artist)
+                                ->where('name', '=', $request->name)
+                                ->first();
+        $album = Album::find($LastAlbum->id);
+        $album->genres()->attach($request->genre_id);
         return redirect('/read');
     }
 

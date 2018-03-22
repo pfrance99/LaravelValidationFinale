@@ -29,14 +29,4 @@ class CreateGenresTables extends Migration
     {
         Schema::dropIfExists('genres');
     }
-
-    public function albums()
-    {
-        return $this->belongsToMany('App\Album')->withTimestamps();
-    }
-
-    public function genres()
-    {
-        return $this->belongsToMany('App\Genre')->withTimestamps();
-    }
 }

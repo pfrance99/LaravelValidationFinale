@@ -12,6 +12,7 @@
         {!! Form::number('date') !!}
         {!! Form::label('Nombre en stock') !!}
         {!! Form::number('stock') !!}
+        {!! Form::select('genre_id', $genres, null, ['placeholder' => 'Choisissez un genre']); !!}
         {!! Form::submit('Valider') !!}
     {!! Form::close() !!}
 @stop

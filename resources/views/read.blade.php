@@ -8,6 +8,7 @@
             <th>Artiste</th>
             <th>Album</th>
             <th>Date</th>
+            <th>Genre</th>
             <th>Stock</th>
             <th>Supprimer</th>
             <th>Modifier</th>
@@ -17,6 +18,10 @@
         <td>{{ $album->artist }}</td>
         <td>{{ $album->name }}</td>
         <td>{{ $album->date }}</td>
+        <td>{!! App\Album::find($album->id)->genres->each(function($genres)
+            {
+                 echo($genres->name);
+            }) !!}</td>
         <td>{{ $album->stock }}</td>
         <td> {!! Form::open(['url' => '/deleted', 'method' => 'post']) !!}
                 {!! Form::hidden('id', $album->id) !!}

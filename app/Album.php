@@ -8,6 +8,6 @@ class Album extends Model
 {
     public function genres()
     {
-        return $this->belongsToMany('App\Genre')/*->withTimestamps()*/;
+        return $this->belongsToMany('App\Genre');
     }
 }

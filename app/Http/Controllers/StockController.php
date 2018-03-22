@@ -21,13 +21,18 @@ class StockController extends Controller
                                 ->where('name', '=', $request->name)
                                 ->first();
         $album = Album::find($LastAlbum->id);
-        $album->genres()->attach($request->genre_id);
+        foreach($request->genre_id as $value)
+        {
+            $album->genres()->attach($value);
+        }
         return redirect('/read');
     }
 
     public function DeleteOne(Request $request)
     {
-        Album::find($request->id)->delete();
+        $albumDelete = Album::find($request->id);
+        $albumDelete->genres()->detach();
+        $albumDelete->delete();
         return redirect('/read');
     }
 

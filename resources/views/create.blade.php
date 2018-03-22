@@ -12,7 +12,10 @@
         {!! Form::number('date') !!}
         {!! Form::label('Nombre en stock') !!}
         {!! Form::number('stock') !!}
-        {!! Form::select('genre_id', $genres, null, ['placeholder' => 'Choisissez un genre']); !!}
+        @foreach($genres as $key => $genre)
+        {!! Form::label($genre) !!}
+        {!! Form::checkbox("genre_id[]", $key) !!}
+        @endforeach()
         {!! Form::submit('Valider') !!}
     {!! Form::close() !!}
 @stop

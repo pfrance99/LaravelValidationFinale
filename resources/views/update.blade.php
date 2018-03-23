@@ -33,7 +33,9 @@
             </div>
             @endforeach()
         </div>
+        <div class="submitCentred">
         {!! Form::submit('Valider') !!}
+        </div>
     {!! Form::close() !!}
     </div>
 @stop

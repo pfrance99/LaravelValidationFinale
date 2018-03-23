@@ -3,6 +3,7 @@
 @section('title', 'Insérer')
 
 @section('content')
+    <div class="content">
     <table>
         <tr>
             <th>Artiste</th>
@@ -13,25 +14,28 @@
             <th>Supprimer</th>
             <th>Modifier</th>
         </tr>
+        <?php $i=0; ?>
         @foreach($albums as $album)
         <tr>
-        <td>{{ $album->artist }}</td>
-        <td>{{ $album->name }}</td>
-        <td>{{ $album->date }}</td>
-        <td>@foreach($album->genres as $product)
+            <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}>{{ $album->artist }}</td>
+            <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}>{{ $album->name }}</td>
+            <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}>{{ $album->date }}</td>
+            <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}>
+                @foreach($album->genres as $product)
                     {{ $product->name }}
-            @endforeach
-            </td>
-        <td>{{ $album->stock }}</td>
-        <td> {!! Form::open(['url' => '/deleted', 'method' => 'post']) !!}
+                @endforeach</td>
+            <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}><span class="stockValue">{{ $album->stock }}</span></td>
+            <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}> {!! Form::open(['url' => '/deleted', 'method' => 'post']) !!}
                 {!! Form::hidden('id', $album->id) !!}
-                {!! Form::submit('X',  ['class' => 'delete']) !!}
+                {!! Form::submit('X',  ['class' => 'delete ReadButon']) !!}
             {!! Form::close() !!}</td>
-        <td>{!! Form::open(['url' => '/update', 'method' => 'post']) !!}
+            <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}>{!! Form::open(['url' => '/update', 'method' => 'post']) !!}
                 {!! Form::hidden('id', $album->id) !!}
-                {!! Form::submit('M') !!}
+                {!! Form::submit('M', ['class' => 'ReadButon']) !!}
             {!! Form::close() !!}</td>
         </tr>
+        <?php $i++; ?>
         @endforeach
     </table>
+    </div>
 @stop

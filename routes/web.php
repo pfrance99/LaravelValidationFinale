@@ -23,3 +23,4 @@ Route::post('/updated', 'StockController@UpdateOne');
 Route::post('/update', 'NavController@update');
 Route::get('/createGenre', 'NavController@createGenre');
 Route::post('/createdGenre', 'StockController@CreateGenre');
+Route::post('/deletedGenre', 'StockController@DeleteGenre');

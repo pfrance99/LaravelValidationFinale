@@ -66,4 +66,11 @@ class StockController extends Controller
         $newGenre->save();
         return redirect('/read');
     }
+
+    public function DeleteGenre(Request $request)
+    {
+        $genreDelete = Genre::find($request->id);
+        $genreDelete->delete();
+        return redirect('/createGenre');
+    }
 }

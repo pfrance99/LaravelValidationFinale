@@ -40,6 +40,7 @@ class NavController extends Controller
 
     public function createGenre()
     {
-        return view('createGenre');
+        $genres = Genre::all();
+        return view('createGenre', ['genres' => $genres]);
     }
 }

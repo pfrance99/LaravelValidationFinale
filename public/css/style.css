@@ -35,7 +35,53 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
+    background-color: rgb(206, 206, 206);
+    font-family: 'ABeeZee', sans-serif;
 }
+
+
+
+/*   HEADER   */
+
+header{
+    width: 100%;
+    height: 150px;
+    background-color: #2E2E2E;
+    box-shadow: 0 8px 10px rgb(124, 124, 124);
+    color: white;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+header ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header li{
+    list-style: none;
+    width: 20%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+header li a{
+    text-decoration: none;
+    color: white;
+}
+
+.title{
+    font-family: 'juiceboxregular';
+    font-size: 4em;
+}
+
+
+/* ---------- */
+
 
 
 .labelInputClass{
@@ -57,17 +103,20 @@ body {
     flex-direction: column;
     height: auto;
     max-width: 400px;
+    width: 70%;
 }
 
 .input{
     display: flex;
     width: 150px;
     height: 15px;
+    font-family: 'ABeeZee', sans-serif;
 }
 
 .content form h2{
     text-align:center;
 }
+
 .content form h3{
     text-align:center;
 }
@@ -80,11 +129,73 @@ body {
     padding-bottom: 10px;
 }
 
-.inputCheckBox{
-}
-
 .WrapCheckBox{
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 15px;
+}
+
+.submitButton{
+    width: 50px;
+    height: 20px;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.submitCentred{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content table tr th{
+    width: 100px;
+}
+
+.content table tr td{
+    text-align:center;   
+    justify-content: center;
+    
+    border: 1px solid black;
+
+}
+
+.ReadButon{
+    width: 30px;
+    height: 30px;
+    margin-left: 50%;   
+}
+
+.td1{
+    background-color: rgb(231, 231, 231);
+    
+}
+
+.td2{
+    background-color: rgb(211, 211, 211);
+    
+}
+
+/*         MEDIA QUERIES*/
+@media screen and (max-width: 1000px) {
+    .title{
+        font-size: 3em!important;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .title{
+        font-size: 2.5em!important;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .title{
+        font-size: 1.5em!important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .content table tr th{
+        background-color: red;
+    }
 }

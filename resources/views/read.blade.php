@@ -25,7 +25,7 @@
         <td>{{ $album->stock }}</td>
         <td> {!! Form::open(['url' => '/deleted', 'method' => 'post']) !!}
                 {!! Form::hidden('id', $album->id) !!}
-                {!! Form::submit('X') !!}
+                {!! Form::submit('X',  ['class' => 'delete']) !!}
             {!! Form::close() !!}</td>
         <td>{!! Form::open(['url' => '/update', 'method' => 'post']) !!}
                 {!! Form::hidden('id', $album->id) !!}

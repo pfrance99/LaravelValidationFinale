@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'philosopherregular';
+    src: url('/fonts/philosopher/philosopher-regular-webfont.woff2') format('woff2'),
+         url('/fonts/philosopher/philosopher-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'philosopherbold';
+    src: url('/fonts/philosopher/philosopher-bold-webfont.woff2') format('woff2'),
+         url('/fonts/philosopher/philosopher-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'juiceboxregular';
+    src: url('/fonts/juicebox/juicebox-webfont.woff2') format('woff2'),
+         url('/fonts/juicebox/juicebox-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.labelInputClass{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.content{
+    width: 100%;
+    display : flex;
+    margin-top: 10%;
+    justify-content: center;
+}
+
+.content form{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-width: 400px;
+}
+
+.input{
+    display: flex;
+    width: 150px;
+    height: 15px;
+}
+
+.content form h2{
+    text-align:center;
+}
+.content form h3{
+    text-align:center;
+}
+
+.labelInputCheckBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-right: 5px;
+    padding-bottom: 10px;
+}
+
+.inputCheckBox{
+}
+
+.WrapCheckBox{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+}

@@ -35,7 +35,7 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(206, 206, 206);
+    background-color: rgb(230, 230, 230);
     font-family: 'ABeeZee', sans-serif;
 }
 
@@ -50,6 +50,7 @@ header{
     box-shadow: 0 8px 10px rgb(124, 124, 124);
     color: white;
     font-family: 'ABeeZee', sans-serif;
+
 }
 
 header ul{
@@ -91,6 +92,13 @@ header li a{
     padding-bottom: 10px;
 }
 
+.labelInputClass2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+
 .content{
     width: 100%;
     display : flex;
@@ -106,6 +114,22 @@ header li a{
     width: 70%;
 }
 
+.content2{
+    width: 100%;
+    display : flex;
+    margin-top: 10%;
+    justify-content: center;
+}
+
+.content2 form{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-width: 400px;
+    width: 70%;
+}
+
+
 .input{
     display: flex;
     width: 150px;
@@ -117,9 +141,18 @@ header li a{
     text-align:center;
 }
 
+.content2 form h2{
+    text-align:center;
+}
+
 .content form h3{
     text-align:center;
 }
+
+.content2 form h3{
+    text-align:center;
+}
+
 
 .labelInputCheckBox{
     display: flex;
@@ -151,12 +184,20 @@ header li a{
     width: 100px;
 }
 
+.content2 table tr th{
+    width: 100px;
+}
+
 .content table tr td{
     text-align:center;   
     justify-content: center;
-    
     border: 1px solid black;
+}
 
+.content2 table tr td{
+    text-align:center;   
+    justify-content: center;
+    border: 1px solid black;
 }
 
 .ReadButon{
@@ -166,14 +207,29 @@ header li a{
 }
 
 .td1{
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(207, 207, 207);
     
 }
 
 .td2{
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(255, 255, 255);
     
 }
+
+#imageAccueil{
+width: 100%;
+height: auto;
+}
+
+.content_welcome{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+
 
 /*         MEDIA QUERIES*/
 @media screen and (max-width: 1000px) {
@@ -191,11 +247,5 @@ header li a{
 @media screen and (max-width: 650px) {
     .title{
         font-size: 1.5em!important;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    .content table tr th{
-        background-color: red;
     }
 }

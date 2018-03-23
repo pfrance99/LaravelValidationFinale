@@ -3,19 +3,8 @@
 @section('title', 'Insérer')
 
 @section('content')
-    <div class="content">
-
-    {!! Form::open(['url' => '/createdGenre', 'method' => 'post']) !!}
-    <h2>Insérer un Genre</h2>
-        <div class="labelInputClass">
-            {!! Form::label('Ajouter un genre : ') !!}
-            {!! Form::text('name', null, ['required', 'class' => 'input']) !!}
-        </div>
-        <div class="submitCentred">
-        {!! Form::submit('Valider', ['class' => 'submitButton'] ) !!}
-        </div>
-    {!! Form::close() !!}   
-    <table class="tableinsert">
+    <div class="content2">
+        <table class="tableinsert">
             <tr>
                 <th>Genre</th>
                 <th>Supprimer</th>
@@ -32,5 +21,15 @@
             <?php $i++; ?>
             @endforeach
         </table>
+    {!! Form::open(['url' => '/createdGenre', 'method' => 'post']) !!}
+    <h2>Insérer un Genre</h2>
+        <div class="labelInputClass2">
+            {!! Form::label('Ajouter un genre : ') !!}
+            {!! Form::text('name', null, ['required', 'class' => 'input']) !!}
+        </div>
+        <div class="submitCentred">
+        {!! Form::submit('Valider', ['class' => 'submitButton'] ) !!}
+        </div>
+    {!! Form::close() !!}   
     </div>
 @stop

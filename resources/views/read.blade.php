@@ -24,7 +24,23 @@
                 @foreach($album->genres as $product)
                     {{ $product->name }}
                 @endforeach</td>
-            <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}><span class="stockValue">{{ $album->stock }}</span></td>
+            <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}><span class={{"stockValue" . $i }}>{{ $album->stock }}</span><script> // OUI JE SAIS LE SCRIPT DANS LE PHP C'EST PAS BEAU MAIS J'AI PAS TROUVE COMMENT FAIRE AUTREMENT (a cause de ma variable qui fait php->jquery)
+                    i = '<?php echo $i; ?>';
+                    $(document).ready(function (){
+                        for(j=0;j<=i;j++){
+                            console.log($('.stockValue' + j).text());
+                            if($('.stockValue' + j).text() >= 10) {
+                                $('.stockValue' + j).parent().css('background-color', 'rgba(0, 255, 13, 0.8)');
+                            } else if($('.stockValue' + j).text() >= 5 ){
+                                $('.stockValue' + j).parent().css('background-color', 'rgba(255, 251, 0, 0.863)');
+                            } else if($('.stockValue' + j).text() >= 1 ){
+                                $('.stockValue' + j).parent().css('background-color', 'rgba(255, 166, 0, 0.8)');
+                            } else {
+                                $('.stockValue' + j).parent().css('background-color', 'rgba(255, 0, 0, 0.7)');
+                            }
+                        }
+                    })
+                    </script></td>
             <td {!! $i%2==0 ? "class='td1'" : "class='td2'"!!}> {!! Form::open(['url' => '/deleted', 'method' => 'post']) !!}
                 {!! Form::hidden('id', $album->id) !!}
                 {!! Form::submit('X',  ['class' => 'delete ReadButon']) !!}

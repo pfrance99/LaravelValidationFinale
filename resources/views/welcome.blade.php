@@ -3,5 +3,7 @@
 @section('title', 'Insérer')
 
 @section('content')
-    <p>Accueil</p>
+    <div class="content_welcome">
+        <img id="imageAccueil" src="/imgs/musique.jpg">
+    </div>
 @stop

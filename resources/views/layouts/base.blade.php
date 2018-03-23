@@ -12,11 +12,11 @@
 <body>
     <header>
         <ul>
-            <li><a href="/">ACCEUIL</a></li>
-            <li><a href="/read">VOIR STOCK</a></li>
+            <li><a class="lien" href="/">ACCUEIL</a></li>
+            <li><a class="lien" href="/read">VOIR STOCK</a></li>
             <li class="title">HEMANN</li>
-            <li><a href="/create">INSERER ALBUM</a></li>
-            <li><a href="/createGenre">GERER GENRE</a></li>
+            <li><a class="lien" href="/create">INSERER ALBUM</a></li>
+            <li><a class="lien" href="/createGenre">GERER GENRE</a></li>
         </ul>
     </header>
     @yield('content')
